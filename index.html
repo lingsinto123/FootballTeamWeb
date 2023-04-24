@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+        }
+        .main{
+            position: relative;
+            width: 80%;
+            float: left;
+        }
+        .layer-body{
+            background-image: url('./main.jpg');
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+        .layer {
+            background-color: rgba(0, 0, 0, 0.438);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        header{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 6%;
+            text-align: center;
+        }
+        header ul li{
+            list-style: none;
+            display: inline;
+            padding: 10px 10px;
+        }
+        header ul li a{
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        header ul li a:hover {
+            color: rgb(55, 255, 0);
+        }
+        .green{
+            color: rgb(55, 255, 0);
+        }
+        .title{
+            position: absolute;
+            left: 50%;
+            font-size: 7rem;
+            color: white;
+            text-transform: uppercase;
+        }
+        #title1{
+            top: 40%;
+            transform: translate(-50%, -40%);
+        }
+        #title2{
+            top: 57%;
+            transform: translate(-50%, -57%);
+        }
+        .char:hover{
+            color: rgb(55, 255, 0);
+        }
+        .button{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 65%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: 100px;
+            border: 0;
+            line-height: 2.5;
+            padding: 0 20px;
+            font-size: 1rem;
+            color: #000000;
+            text-transform: uppercase;
+            border-radius: 15px;
+            background-color: rgb(55, 255, 0);
+        }
+        
+        footer{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 5px;
+        }
+
+        .side{
+            position: absolute;
+            right: 0;
+            background-color: rgb(0, 0, 0);
+            width: 20%;
+            height: 100vh;
+            text-transform: uppercase;
+        }
+        .side-title{
+            position: absolute;
+            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 6%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+        .side-title:hover{
+            color: rgb(55, 255, 0);
+        }
+        .side .match-box{
+            position: relative;
+            color: white;
+            font-size: 25px;
+            top: 6%;
+            background-image: url('./desktop-wallpaper-ac-milan-football-club-san-siro.jpg');
+            background-size: cover;
+            height: 47%;
+
+        }
+        .side .match-box1{
+            position: relative;
+            color: white;
+            font-size: 25px;
+            top: 6%;
+            background-image: url('./stadium1.jpg');
+            background-size: cover;
+            height: 47%;
+
+        }
+        .side .logo{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: 90px;
+            top: 8PX;
+        }
+        .side .logo2{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: 60px;
+            top: 8PX;
+        }
+        .match-team{
+            position: relative;
+            float: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            top: 25%;
+            height: 50%;
+            width: 100%;
+        }
+        #team1{
+            position: absolute;
+            left: 15%;
+            width: 22%;
+            height: 105px;
+        }
+        #team2{
+            position: absolute;
+            right: 12%;
+            width: 25%;
+            top: 18px;
+        }
+        #vs{
+            position: absolute;
+            top: 20%;
+        }
+        #date{
+            position:absolute;
+            text-align: center;
+            font-size: 25px;
+            top: 65%;
+        }
+        #stadium{
+            position: absolute;
+            text-align: center;
+            font-size: 15px;
+            top: 85%;
+        }
+        .ticket-button{
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            top: 110%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: 250px;
+            border: 0;
+            line-height: 2;
+            padding: 0 20px;
+            font-size: 1rem;
+            color: #000000;
+            text-transform: uppercase;
+            border-radius: 15px;
+            background-color: rgb(55, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="layer-body"><div class="layer"></div></div>
+        <header id="nav"><ul>
+                <li><a class="green" href="">HOME</a></li>
+                <li><a href="">PLAYERS</a></li>
+                <li><a href="">MEMBERS</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul></header>
+        <h1 class="title" id="title1">sensational</h1>
+        <h1 class="title" id="title2">Football</h1>
+        <a href="./index2.html"><button class="button"type="button" >Explore</button></a>
+        <footer><p class="green">Copyright (c) 2023 Hanyang University. ALL RIGHTS RESERVED.</p></footer>
+    </div>
+
+    <div class="side">
+        <h1 class="side-title">next match</h1>
+        <div class="match-box1">
+            <img class="logo" src="./laliga-v-negativo-monocolor-1200x1200.png" alt="">
+            <div class="match-team">
+                <img id="team1" src="./real_logo.png" alt="">
+                <p id="vs">vs</p>
+                <img id="team2" src="./barpng.png" alt="">
+                <p id="date">Mon 10 May 04:00</p>
+                <p id="stadium">santiago bernabeu</p>
+                <a href=""><button class="ticket-button" type="button" ><p id="ticket">match centre & tickets ></p></button></a>
+            </div>
+        </div>
+        <div class="match-box">
+            <img class="logo2" src="./serie-a-logo.png" alt="">
+            <div class="match-team">
+                <img id="team1" src="./Logo_of_AC_Milan.png" alt="">
+                <p id="vs">vs</p>
+                <img id="team2" src="./inter-milan-logo-4.png" alt="">
+                <p id="date">Thu 11 May 04:00</p>
+                <p id="stadium">san siro</p>
+                <a href=""><button class="ticket-button" type="button" ><p id="ticket">match centre & tickets ></p></button></a>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        const title1 = new SplitType('#title1', { types: 'chars'})
+        const title2 = new SplitType('#title2', { types: 'chars'})
+
+        gsap.from(title1.chars, {
+            y: -200,
+            stagger: 0.08,
+            delay: 0.5,
+            duration: .3
+        })
+        
+
+        gsap.from(title2.chars, {
+            y: 200,
+            stagger: 0.08,
+            delay: 0.5,
+            duration: .3
+        })
+
+        TweenMax.from('.button',{
+            css:{ 
+                opacity:1,
+                y: 190
+            },
+            stagger: 0.1,
+            delay: 1,
+            duration: .5
+        });  
+        
+    </script>
+</body>
+</html>
