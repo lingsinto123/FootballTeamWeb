@@ -1,29 +1,67 @@
-# Python 3 server example
-from http.server import BaseHTTPRequestHandler, HTTPServer
+import threading
+import random
 import time
 
-hostName = "192.168.0.1"
-serverPort = 2000
 
-class MyServer(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
-        self.end_headers()
-        self.wfile.write(bytes("<html><head><title>예시입니다</title></head>", "utf-8"))
-        self.wfile.write(bytes("<p>Request: %s</p>" % self.path, "utf-8"))
-        self.wfile.write(bytes("<body>", "utf-8"))
-        self.wfile.write(bytes("<p>This is an example web server.</p>", "utf-8"))
-        self.wfile.write(bytes("</body></html>", "utf-8"))
+# Dining philosophers, 5 phil with 5 forks, two forks to eat.
 
-if __name__ == "__main__":
-    webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Server started http://%s:%s" % (hostName, serverPort))
+class Philosopher(threading.Thread):
+    running = True
 
-    try:
-        webServer.serve_forever()
-    except KeyboardInterrupt:
-        pass
+    def __init__(self, xname, forkOnLeft, forkOnRight):
+        threading.Thread.__init__(self)
+        self.name = xname
+        self.forkOnLeft = forkOnLeft
+        self.forkOnRight = forkOnRight
 
-    webServer.server_close()
-    print("Server stopped.")
+    def run(self):
+        while (self.running):
+            #  Philosopher is thinking (but really is sleeping).
+            time.sleep(random.uniform(3, 13))
+            print
+            '%s is hungry.' % self.name
+            self.dine()
+
+    def dine(self):
+        fork1, fork2 = self.forkOnLeft, self.forkOnRight
+
+        while self.running:
+            fork1.acquire(True)
+            locked = fork2.acquire(False)
+            if locked: break
+            fork1.release()
+            print
+            '%s swaps forks' % self.name
+            fork1, fork2 = fork2, fork1
+        else:
+            return
+
+        self.dining()
+        fork2.release()
+        fork1.release()
+
+    def dining(self):
+        print
+        '%s starts eating ' % self.name
+        time.sleep(random.uniform(1, 10))
+        print
+        '%s finishes eating and leaves to think.' % self.name
+
+
+def DiningPhilosophers():
+    forks = [threading.Lock() for n in range(5)]
+    philosopherNames = ('Aristotle', 'Kant', 'Spinoza', 'Marx', 'Russel')
+
+    philosophers = [Philosopher(philosopherNames[i], forks[i % 5], forks[(i + 1) % 5]) \
+                    for i in range(5)]
+
+    random.seed(507129)
+    Philosopher.running = True
+    for p in philosophers: p.start()
+    time.sleep(100)
+    Philosopher.running = False
+    print("Now we're finishing.")
+
+
+DiningPhilosophers()
+
