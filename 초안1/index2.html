@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@300&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+
+
+  
+  <body>
+    <div class="background-image"></div>
+
+    <div class="scrolls">
+      <div class="up">
+        <span>↑</span>
+        <div class="center">
+          <span
+            >mouse <br />
+            scrolling</span
+          >
+        </div>
+      </div>
+      <div class="down"><span>↓</span></div>
+    </div>
+    <div class="header">
+      <ul>
+        <li><a href="#home" id="a">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#explore">explore</a></li>
+      </ul>
+    </div>
+    <footer>
+      <p>Copyright (c) 2023 Hanyang University. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <div class="smooth-scroll">
+      <div class="row">
+        <div class="column">
+          <a class="players_class" id="id1"   >  <img class="players" onClick="player_click(this)"  src="images\Angel Di Maria\Di Maria.png"></a>
+          <a class="players_class" id="id2"   >     <img class="players"  onClick="player_click(this)" src="images\Chicharito\Chicharito.png"></a>
+          <a class="players_class" id="id3"   >        <img class="players" onClick="player_click(this)" src="images\Daniel Sturridge\Sturridge.png"></a>
+          <a class="players_class" id="id4"   >       <img class="players" onClick="player_click(this)" src="images\Declan Rice\Rice.png"></a>
+          <a class="players_class" id="id5"   >       <img class="players" onClick="player_click(this)" src="images\Diego Costa\Costa.png"></a>
+          <a class="players_class"   id="id6">        <img class="players" onClick="player_click(this)" src="images\Eden Hazard\Eden Hazard.png"></a>
+          <a class="players_class"   id="id7">        <img class="players" onClick="player_click(this)" src="images\Enzo Fernandez\Enzo.png"></a>
+          <a class="players_class"   id="id8">        <img class="players" onClick="player_click(this)" src="images\Fernando Torres\Torres.png"></a>
+          <a class="players_class"   id="id9">       <img class="players" onClick="player_click(this)" src="images\James Ward-Prowse\Ward-Prowse.png"></a>
+          <a class="players_class"   id="id10">       <img class="players" onClick="player_click(this)" src="images\Kepa\Kepa.png"></a>
+          <a class="players_class"   id="id11">       <img class="players" onClick="player_click(this)" src="images\Khvicha Kvaratskhelia\kvara.png"></a>
+          <a class="players_class"   id="id12">        <img class="players" onClick="player_click(this)" src="images\Lee Kang-in\Kangin.png"></a>
+          <a class="players_class"   id="id13">    <img class="players" onClick="player_click(this)" src="images\N'golo Kante\Kante.png"></a>
+          <a class="players_class"   id="id14">    <img class="players" onClick="player_click(this)" src="images\Park Chu-Young\Park ChuYoung.png"></a>
+          <a class="players_class"   id="id15">    <img class="players" onClick="player_click(this)" src="images\Paul Pogba\Pogba.png"></a>
+          <a class="players_class"   id="id16">    <img class="players" onClick="player_click(this)" src="images\Petr Cech\Cech.png"></a>
+          <a class="players_class"   id="id17">    <img class="players" onClick="player_click(this)" src="images\Philipp Lahm\Lahm.png"></a>
+          <a class="players_class"   id="id18">   <img class="players" onClick="player_click(this)" src="images\Steven Gerrard\Humbahumba.png"></a>
+          <a class="players_class"   id="id19">    <img class="players" onClick="player_click(this)" src="images\Theo Hernandez\Theo.png"></a>
+          <a class="players_class"   id="id20">    <img class="players" onClick="player_click(this)" src="images\Thiago Silva\T Silva.png"></a>
+          <a class="players_class"  id="id21">     <img class="players" onClick="player_click(this)" src="images\Tim Cahill\Cahill.png"></a>
+          <a class="players_class"   id="id22">   <img class="players" onClick="player_click(this)" src="images\Vinicius Junior\Vini.png"></a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>   
+
+var selected=null;
+
+function resetpic(d){
+        gsap.to(d,0.6,{css:{width:"300px",height:"300px", opacity:0.6},
+        })
+        }
+
+function player_click(d){
+  if(d!=selected){
+    resetpic(selected);
+  }
+  selected=d;
+        gsap.to(d,0.6,{css:{width:"500px",height:"400px", opacity:1},
+        })
+        }
+    
+        
+
+
+      
+    </script>
+  </body>
+</html>
