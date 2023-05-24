@@ -1,0 +1,51 @@
+{
+    "1":{
+        "name" : "lionel messi",
+        "birth" : "June 24, 1987 (age 35 years)",
+        "nationality" : "Rosario, Argentina",
+        "position" : "RW",
+        "team" : "FC barcelona, PSG",
+        "folder" : "./images/messi/"
+    },
+    "2":{
+        "name" : "frank lampard",
+        "birth" : "June 20, 1978 (age 44 years)",
+        "nationality" : "Romford, United Kingdom",
+        "position" : "CM",
+        "team" : "chelsea",
+        "folder" : "./images/lampard/"
+    },
+    "3":{
+        "name" : "filippo inzaghi",
+        "birth" : "August 9, 1973 (age 49 years)",
+        "nationality" : "Piacenza, Italy",
+        "position" : "CF",
+        "team" : "ac milan",
+        "folder" : "./images/inzaghi/"
+    },
+    "4":{
+        "name" : "steven gerrard",
+        "birth" : "May 30, 1980 (age 42 years)",
+        "nationality" : "Liverpool, United Kingdom",
+        "position" : "CM",
+        "team" : "liverpool",
+        "folder" : "./images/gerrard/"
+    },
+    "5":{
+        "name" : "wayne rooney",
+        "birth" : "October 24, 1985 (age 37 years)",
+        "nationality" : "Croxteth, Liverpool, United Kingdom",
+        "position" : "CF",
+        "team" : "manchester united",
+        "folder" : "./images/rooney/"
+    },
+    "6":{
+        "name" : "david villa",
+        "birth" : "December 3, 1981 (age 41 years)",
+        "nationality" : "Langreo, Spain",
+        "position" : "CF",
+        "team" : "fc barcelona",
+        "folder" : "./images/villa/"
+    } 
+
+}
